@@ -8,7 +8,7 @@ import SwiperCards from "../SwiperCards";
 const BookingLayout = () => {
   return (
     <>
-      <main className="w-[100%] xs:py-3 sm:py-16 sm:px-16 xs:px-6 flex xs:flex-wrap sm:flex-nowrap gap-2">
+      <main className="w-[100%] xs:pb-24 sm:py-16 sm:px-16 xs:px-6 flex xs:flex-wrap sm:flex-nowrap gap-2">
         <aside className="w-[70%]">
           <article className="w-[100%] flex sm:flex-row xs:flex-col flex-wrap xs:gap-2 sm:gap-3 items-center">
             <TravelCard btn="FLIGHT" href="flight" img={flight} />

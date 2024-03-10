@@ -10,6 +10,12 @@
   box-sizing: border-box;
 }
 
+#bus-mobile-card{
+  border-radius: 5px;
+  background: linear-gradient(45deg,white ,white, rgb(234, 204, 209), rgb(255, 196, 196));
+
+}
+
 body {
   font-family: Inter;
 }
@@ -232,6 +238,11 @@ body {
 @media screen and (max-width: 758px) {
   .swiper {
     width: 48vw;
-    height: 60vw;
+    height: 66vw;
+  }
+  #swiper-box{
+    position: relative;
+    right: 0;
+    top: 50px;
   }
 }
