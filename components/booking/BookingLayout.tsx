@@ -2,7 +2,6 @@ import React from "react";
 import flight from "../media/flight.json";
 import bus from "../media/bus.json";
 import train from "../media/train.json";
-import SwipperComponent from "../bus/SwipperComponent";
 import { TravelCard } from "../travelCard/TravelCard";
 import SwiperCards from "../SwiperCards";
 

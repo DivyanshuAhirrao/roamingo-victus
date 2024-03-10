@@ -1,7 +1,6 @@
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import HoverRating from "../Rating";
-import Link from "next/link";
 import CartModal from "../cart/CartModal";
 
 const BusCard = () => {
