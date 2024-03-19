@@ -29,8 +29,90 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+
+// Search Component :-
+
+
+import React, { useState } from "react";
+const SearchTravel = () => {
+  const [state, setState] = useState({
+    start_city: "",
+    end_city: "",
+  });
+
+  const[distance , setDistance] = useState(null);
+
+  const { start_city, end_city } = state;
+
+  const fetchData = async (scity:string , ecity:string) => {
+    try {
+      const response = await fetch(`https://main--romingo-backend-express.netlify.app/.netlify/functions/api/journey/${scity}/${ecity}/bus/grade%20a`);
+      const data = await response.json();
+      console.log(data);
+      
+      setDistance(data.distance);
+    } catch (error) {
+     console.log(error);
+    }
+  };
+
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log(start_city);
+    console.log(end_city);
+    fetchData(start_city, end_city);
+
+  };
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
+
+
+  return (
+    <div>
+      <section className="w-[100%] h-[300px] bg-slate-200 flex flex-col justify-center items-center">
+        <form onSubmit={handleSubmit}>
+          <article className="flex gap-3">
+            <input
+              type="text"
+              id="scity"
+              name="start_city"
+              value={start_city}
+              placeholder="Enter Start City"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              id="ecity"
+              name="end_city"
+              value={end_city}
+              placeholder="Enter Destination"
+              onChange={handleChange}
+            />
+
+            <button className="px-5 py-1 bg-green-300 rounded-md ">Search</button>
+          </article>
+        </form>
+        <div className="pt-10">
+          <h2>Distance : <span className="text-red-600 font-bold">{distance}</span></h2>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default SearchTravel;
+
+
+
