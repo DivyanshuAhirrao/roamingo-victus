@@ -4,7 +4,9 @@ import Features from "@/components/Features";
 import GetApp from "@/components/GetApp";
 import Guide from "@/components/Guide";
 import Hero from "@/components/Hero";
+import SearchTravel from "@/components/SearchTravel";
 import BookingLayout from "@/components/booking/BookingLayout";
+import SearchCity from "@/components/travelCard/SearchCity";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
@@ -46,10 +48,13 @@ export default function Home() {
           )
         })
       }
-    </div> */}
+    </div>  */}
 
       <div data-aos="flip-up" data-aos-duration="1000">
         <Hero />
+      </div>
+       <div data-aos="flip-up" data-aos-duration="1000" className="sm:block xs:hidden">
+        <SearchTravel />
       </div>
       <div data-aos="zoom-out-up" data-aos-duration="1000">
         <BookingLayout />
@@ -71,6 +76,7 @@ export default function Home() {
         <GetApp />
       </div>
 
+     
     </>
   );
 }
